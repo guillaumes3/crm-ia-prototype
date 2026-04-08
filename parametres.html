@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Paramètres | CRM IA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo" style="color:white; margin-bottom: 2rem;">CRM<span>AI</span></div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html">📊 Vue d'ensemble</a></li>
+                <li><a href="ajouter-produit.html">📦 Nouvelle Fiche</a></li>
+                <li><a href="parametres.html" class="active">⚙️ Paramètres</a></li>
+                <li style="margin-top: 2rem;"><a href="index.html" style="color: #f87171;">🚪 Se déconnecter</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1 style="margin-bottom: 2rem;">Paramètres de l'entreprise</h1>
+            
+            <div class="grid" style="align-items: start;">
+                
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    <div class="stat-card">
+                        <h3>Profil de l'entreprise</h3>
+                        <div class="form-group" style="margin-top: 1rem;">
+                            <label>Nom de l'entreprise</label>
+                            <input type="text" value="Entreprise XYZ">
+                        </div>
+                        <div class="form-group">
+                            <label>Email de contact</label>
+                            <input type="email" value="contact@xyz.com">
+                        </div>
+                        <button class="btn btn-outline" style="width: auto;">Mettre à jour</button>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>🔌 Clés API Marketplaces</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 1rem;">Connectez vos boutiques pour le déploiement automatique.</p>
+                        <div class="form-group">
+                            <label>Shopify Access Token</label>
+                            <input type="password" value="shpat_1234567890">
+                        </div>
+                        <div class="form-group">
+                            <label>Amazon SP-API Secret</label>
+                            <input type="password" placeholder="Collez votre clé secrète Amazon">
+                        </div>
+                        <button class="btn btn-primary" style="width: auto;">Enregistrer les clés</button>
+                    </div>
+                </div>
+
+                <div class="stat-card" style="background: #f8fafc; border: 2px solid var(--border);">
+                    <h3>💳 Mon Forfait Actuel</h3>
+                    
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; text-align: center; border: 1px solid var(--primary);">
+                        <h2 style="color: var(--primary);">Business Pro</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;">99€ <span style="font-size: 0.9rem; font-weight: normal;">/mois</span></p>
+                        <span class="badge" style="margin-top: 10px; display: inline-block;">Actif jusqu'au 12/05/2026</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Méthode de paiement</label>
+                        <div style="padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: white; display: flex; align-items: center; gap: 10px;">
+                            💳 Carte se terminant par <b>4242</b>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 10px; margin-top: 2rem;">
+                        <button class="btn btn-outline">Voir les factures</button>
+                        <button class="btn btn-outline" style="color: #ef4444; border-color: #ef4444;">Résilier</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>
