@@ -88,3 +88,70 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+// --- 6. LOGIQUE DES CLES API MARKETPLACES (Page Paramètres) ---
+    const apiForm = document.getElementById('api-form');
+    const apiList = document.getElementById('api-keys-list');
+
+    if (apiForm && apiList) {
+        // Base de données simulée pour les clés
+        let activeKeys = [
+            { platform: 'Shopify', key: 'shpat_8a7b6c5d4e3f2g1h' } // On met un exemple par défaut
+        ];
+
+        // Fonction pour dessiner la liste à l'écran
+        const renderKeys = () => {
+            apiList.innerHTML = ''; // On vide la liste HTML
+            
+            if (activeKeys.length === 0) {
+                apiList.innerHTML = '<li style="color: #94a3b8; font-size: 0.9rem; font-style: italic;">Aucune connexion active pour le moment.</li>';
+                return;
+            }
+
+            activeKeys.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.className = 'api-item';
+                
+                // On masque une partie de la clé pour la sécurité (comme dans la vraie vie)
+                const hiddenKey = item.key.substring(0, 6) + '••••••••••••';
+
+                li.innerHTML = `
+                    <div>
+                        <div class="platform">${item.platform}</div>
+                        <div class="key-preview">${hiddenKey}</div>
+                    </div>
+                    <button class="btn-danger" data-index="${index}">🗑️ Retirer</button>
+                `;
+                apiList.appendChild(li);
+            });
+
+            // Ajouter l'événement de suppression sur chaque bouton "Retirer"
+            document.querySelectorAll('.btn-danger').forEach(button => {
+                button.addEventListener('click', function() {
+                    const indexToRemove = this.getAttribute('data-index');
+                    activeKeys.splice(indexToRemove, 1); // Retire l'élément du tableau
+                    renderKeys(); // Redessine la liste mise à jour
+                });
+            });
+        };
+
+        // Quand l'utilisateur soumet le formulaire d'ajout
+        apiForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const select = document.getElementById('marketplace-select');
+            const platformName = select.options[select.selectedIndex].value;
+            const keyInput = document.getElementById('api-key-input');
+
+            // Ajoute la nouvelle clé dans notre tableau
+            activeKeys.push({ 
+                platform: platformName, 
+                key: keyInput.value 
+            });
+            
+            keyInput.value = ''; // Réinitialise le champ texte
+            renderKeys(); // Met à jour l'affichage
+        });
+
+        // Affichage initial au chargement de la page
+        renderKeys();
+    }

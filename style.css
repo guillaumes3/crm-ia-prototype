@@ -62,3 +62,31 @@ th { color: #64748b; font-size: 0.85rem; text-transform: uppercase; }
 /* Auth Layout */
 .auth-page { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: var(--bg-light); }
 .auth-card { background: white; padding: 3rem; border-radius: 16px; width: 100%; max-width: 400px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+/* --- LISTE API DYNAMIQUE --- */
+.api-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.api-item:hover { border-color: var(--primary); }
+
+.api-item .platform { font-weight: 800; color: var(--dark); }
+.api-item .key-preview { font-family: monospace; color: #64748b; background: var(--bg-light); padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; margin-top: 5px; display: inline-block; }
+
+.btn-danger { 
+    color: #ef4444; 
+    background: #fef2f2; 
+    border: none; 
+    padding: 8px 12px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-weight: 600; 
+    transition: 0.2s;
+}
+.btn-danger:hover { background: #fee2e2; color: #b91c1c; }

@@ -39,18 +39,33 @@
                     </div>
 
                     <div class="stat-card">
-                        <h3>🔌 Clés API Marketplaces</h3>
-                        <p style="font-size: 0.9rem; margin-bottom: 1rem;">Connectez vos boutiques pour le déploiement automatique.</p>
-                        <div class="form-group">
-                            <label>Shopify Access Token</label>
-                            <input type="password" value="shpat_1234567890">
-                        </div>
-                        <div class="form-group">
-                            <label>Amazon SP-API Secret</label>
-                            <input type="password" placeholder="Collez votre clé secrète Amazon">
-                        </div>
-                        <button class="btn btn-primary" style="width: auto;">Enregistrer les clés</button>
-                    </div>
+    <h3>🔌 Intégrations Marketplaces</h3>
+    <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: #64748b;">Connectez vos boutiques pour le déploiement automatique par l'IA.</p>
+    
+    <form id="api-form" style="background: var(--bg-light); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+        <label style="font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 10px;">Nouvelle connexion</label>
+        
+        <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+            <select id="marketplace-select" style="padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; flex: 1; font-family: inherit; font-size: 1rem; background: white;">
+                <option value="Amazon">Amazon Seller Central</option>
+                <option value="Shopify">Shopify</option>
+                <option value="eBay">eBay</option>
+                <option value="Etsy">Etsy</option>
+                <option value="Cdiscount">Cdiscount</option>
+            </select>
+        </div>
+        
+        <div style="display: flex; gap: 10px;">
+            <input type="text" id="api-key-input" placeholder="Collez votre clé API secrète ici..." required style="flex: 2;">
+            <button type="submit" class="btn btn-primary" style="flex: 1; padding: 0.8rem;">➕ Ajouter</button>
+        </div>
+    </form>
+
+    <h4 style="font-size: 0.85rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Vos connexions actives</h4>
+    
+    <ul id="api-keys-list" style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
+        </ul>
+</div>
                 </div>
 
                 <div class="stat-card" style="background: #f8fafc; border: 2px solid var(--border);">
