@@ -90,3 +90,18 @@ th { color: #64748b; font-size: 0.85rem; text-transform: uppercase; }
     transition: 0.2s;
 }
 .btn-danger:hover { background: #fee2e2; color: #b91c1c; }
+
+/* --- FILTRES DASHBOARD --- */
+.filter-select {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: white;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--dark);
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+}
+.filter-select:focus { border-color: var(--primary); }

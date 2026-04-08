@@ -155,3 +155,69 @@ document.addEventListener("DOMContentLoaded", () => {
         // Affichage initial au chargement de la page
         renderKeys();
     }
+    // --- 7. LOGIQUE DU GRAPHIQUE DES VENTES (Dashboard) ---
+    const ctx = document.getElementById('salesChart');
+    
+    if (ctx) {
+        // On configure le graphique Chart.js
+        const salesChart = new Chart(ctx, {
+            type: 'line', // Type de graphique (ligne)
+            data: {
+                labels: ['1', '5', '10', '15', '20', '25', '30'], // Jours du mois
+                datasets: [
+                    {
+                        label: 'Amazon (€)',
+                        data: [1200, 1900, 1500, 2200, 1800, 2800, 2400],
+                        borderColor: '#f97316', // Orange Amazon
+                        backgroundColor: 'rgba(249, 115, 22, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4, // Courbe adoucie
+                        fill: true
+                    },
+                    {
+                        label: 'Shopify (€)',
+                        data: [800, 1200, 900, 1500, 1400, 2100, 1900],
+                        borderColor: '#10b981', // Vert Shopify
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // Permet au graphique de remplir son conteneur
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { borderDash: [5, 5] } // Grille en pointillés
+                    },
+                    x: {
+                        grid: { display: false } // Cache la grille verticale
+                    }
+                }
+            }
+        });
+
+        // Simulation d'interactivité : Quand on change le filtre "Marketplace"
+        document.getElementById('filter-marketplace').addEventListener('change', function(e) {
+            const selected = e.target.value;
+            
+            // Masque ou affiche les courbes selon le choix
+            if (selected === 'amazon') {
+                salesChart.data.datasets[0].hidden = false;
+                salesChart.data.datasets[1].hidden = true;
+            } else if (selected === 'shopify') {
+                salesChart.data.datasets[0].hidden = true;
+                salesChart.data.datasets[1].hidden = false;
+            } else {
+                salesChart.data.datasets[0].hidden = false;
+                salesChart.data.datasets[1].hidden = false;
+            }
+            salesChart.update(); // Redessine le graphique
+        });
+    }
