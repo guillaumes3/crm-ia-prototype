@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Nouvel Article | CRM IA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo" style="color:white; margin-bottom: 2rem;">CRM<span>AI</span></div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html">📊 Vue d'ensemble</a></li>
+                <li><a href="ajouter-produit.html" class="active">📦 Nouvelle Fiche Produit</a></li>
+                <li><a href="abonnements.html">💳 Mon Forfait</a></li>
+                <li style="margin-top: 2rem;"><a href="index.html" style="color: #f87171;">🚪 Se déconnecter</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1 style="margin-bottom: 2rem;">Créer une fiche produit avec l'IA</h1>
+
+            <div class="stat-card" style="max-width: 800px;">
+                <div class="form-group">
+                    <label>Nom du produit</label>
+                    <input type="text" placeholder="Ex: Clavier Mécanique Sans Fil">
+                </div>
+                
+                <div class="form-group">
+                    <label>Description brute (L'IA optimisera le SEO)</label>
+                    <textarea id="raw-desc" rows="4" placeholder="Tapez vos notes ici..."></textarea>
+                </div>
+
+                <button id="btn-ai" class="btn btn-primary" style="background: #8b5cf6; margin-bottom: 1.5rem;">
+                    ✨ Générer la description de vente
+                </button>
+
+                <div id="ai-result" style="display: none; padding: 1.5rem; background: #f5f3ff; border: 1px solid #c4b5fd; border-radius: 8px; margin-bottom: 2rem;">
+                    <p id="optimized-text" style="font-weight: 600; color: #4c1d95;"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>Prix de vente (€)</label>
+                    <input type="number" placeholder="49.99">
+                </div>
+
+                <button class="btn btn-primary">Sauvegarder et Envoyer vers Amazon/Shopify</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>

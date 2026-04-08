@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | CRM IA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo" style="color:white; margin-bottom: 2rem;">CRM<span>AI</span></div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" class="active">📊 Vue d'ensemble</a></li>
+                <li><a href="ajouter-produit.html">📦 Nouvelle Fiche Produit</a></li>
+                <li><a href="abonnements.html">💳 Mon Forfait</a></li>
+                <li style="margin-top: 2rem;"><a href="index.html" style="color: #f87171;">🚪 Se déconnecter</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1 style="margin-bottom: 2rem;">Vue d'ensemble des ventes</h1>
+            
+            <div class="grid" style="margin-bottom: 2rem;">
+                <div class="stat-card">
+                    <p>Produits actifs</p>
+                    <h2 style="font-size: 2.5rem; color: var(--primary);">42</h2>
+                </div>
+                <div class="stat-card">
+                    <p>Chiffre d'Affaires du mois</p>
+                    <h2 style="font-size: 2.5rem; color: #10b981;">14 590 €</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <h3>Dernières commandes Marketplaces</h3>
+                <table>
+                    <tr>
+                        <th>Article</th>
+                        <th>Plateforme</th>
+                        <th>Statut</th>
+                    </tr>
+                    <tr>
+                        <td>Montre Connectée Pro</td>
+                        <td>Amazon</td>
+                        <td><span class="badge">Expédié</span></td>
+                    </tr>
+                    <tr>
+                        <td>Casque Audio Bluetooth</td>
+                        <td>Shopify</td>
+                        <td><span class="badge">En préparation</span></td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

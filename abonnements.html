@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Abonnements | CRM IA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo" style="color:white; margin-bottom: 2rem;">CRM<span>AI</span></div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html">📊 Vue d'ensemble</a></li>
+                <li><a href="ajouter-produit.html">📦 Nouvelle Fiche Produit</a></li>
+                <li><a href="abonnements.html" class="active">💳 Mon Forfait</a></li>
+                <li style="margin-top: 2rem;"><a href="index.html" style="color: #f87171;">🚪 Se déconnecter</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1 style="margin-bottom: 2rem;">Gérer mon abonnement</h1>
+            
+            <div class="grid">
+                <div class="stat-card text-center">
+                    <h3>Plan Starter</h3>
+                    <h2 style="font-size: 3rem; margin: 1rem 0;">29€<span style="font-size: 1rem; color: #64748b;">/mois</span></h2>
+                    <p style="margin-bottom: 1.5rem;">Idéal pour démarrer</p>
+                    <button class="btn btn-outline">Forfait Actuel</button>
+                </div>
+
+                <div class="stat-card text-center" style="border: 2px solid var(--primary);">
+                    <h3>Plan Pro IA +</h3>
+                    <h2 style="font-size: 3rem; margin: 1rem 0;">99€<span style="font-size: 1rem; color: #64748b;">/mois</span></h2>
+                    <p style="margin-bottom: 1.5rem;">Produits illimités & API Amazon</p>
+                    <button class="btn btn-primary">Passer en Pro</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
