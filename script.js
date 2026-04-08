@@ -40,3 +40,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+// Ajoute ceci à la fin de ton fichier script.js existant
+
+const paymentForm = document.getElementById('payment-form');
+
+if (paymentForm) {
+    paymentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const btn = document.getElementById('btn-pay');
+        btn.innerText = "🔒 Traitement sécurisé...";
+        btn.disabled = true;
+        btn.style.opacity = "0.7";
+
+        // Simulation de la banque (2.5 secondes)
+        setTimeout(() => {
+            // Création d'une notification visuelle de succès
+            btn.innerText = "✅ Paiement Accepté !";
+            btn.style.background = "#10b981";
+
+            setTimeout(() => {
+                alert("Félicitations ! Votre abonnement Pro est actif.");
+                window.location.href = "dashboard.html"; 
+            }, 1000);
+            
+        }, 2500);
+    });
+}
